@@ -1,5 +1,12 @@
 import connectToMongo from '@/middleware/middleware';
 import mongoose from 'mongoose';
+import Cors from 'cors';
+
+// Initialize the Cors middleware
+const cors = Cors({
+  origin: 'https://easymola.vercel.app', // Replace with your Vercel deployment URL
+  methods: ['GET', 'POST'], // Specify the HTTP methods you want to allow
+});
 
 // Include the schema here
 const submissionSchema = new mongoose.Schema({
