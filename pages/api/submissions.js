@@ -16,10 +16,10 @@ const submissionSchema = new mongoose.Schema({
   phoneNumber: String,
   createdAt: {
     type: Date,
-    expires: '3h',
     default: Date.now,
   },
 });
+submissionSchema.index({ createdAt: 1 }, { expireAfterSeconds: 10800 });
 
 const Submission = mongoose.model('Submission', submissionSchema);
 
@@ -45,7 +45,7 @@ const handler = async (req, res) => {
     }
   } else if (req.method === 'POST') {
     const { from, to, charges, phoneNumber } = req.body;
-    
+
     // Create a new Submission document
     const submission = new Submission({
       from,
