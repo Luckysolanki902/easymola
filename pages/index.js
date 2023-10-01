@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <div className="App">
       <Head>
-        <title>EasyMola - Your Title</title>
+        <title>EasyMola</title>
         <meta name="description" content={`Why not earn money while going out of the hostel\nJust by getting something for your hostelmates`} />
         <meta property="og:title" content="EasyMola" />
         <meta property="og:description" content={`Why not earn money while going out of the hostel\nJust by getting something for your hostelmates`} />
