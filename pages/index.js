@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import PeopleList from '../components/PeopleList';
 import Head from 'next/head';
 
-const apiUrl = 'http://localhost:3000'; // Update with your API URL
+const apiUrl = 'https://easymola.vercel.app'; // Update with your API URL
 
 const Home = () => {
   const [people, setPeople] = useState([]);
