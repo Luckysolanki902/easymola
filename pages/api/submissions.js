@@ -16,7 +16,7 @@ const submissionSchema = new mongoose.Schema({
   phoneNumber: String,
   createdAt: {
     type: Date,
-    expires: '30m',
+    expires: '3h',
     default: Date.now,
   },
 });
