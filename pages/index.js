@@ -22,6 +22,7 @@ const Home = () => {
         `${apiUrl}/api/submissions?refreshKey=${new Date().getTime()}` // Add a timestamp to ensure a fresh request
       );
       setPeople(response.data);
+      console.log('Fetched data successfully:', response.data); // Log successful data fetch
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -30,6 +31,7 @@ const Home = () => {
   const handleSubmission = () => {
     // After a successful submission, toggle the refresh flag
     setRefreshFlag(!refreshFlag);
+    console.log('Submission successful'); // Log successful submission
   };
 
   return (
