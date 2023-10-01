@@ -84,6 +84,11 @@
     "@types/node" "*"
     "@types/webidl-conversions" "*"
 
+"@vercel/analytics@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.2.tgz#7af719a1bf33734840aee6f04eb548d2cedab9ec"
+  integrity sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
