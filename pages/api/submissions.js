@@ -1,13 +1,7 @@
+import connectToMongo from '@/middleware/middleware';
 import mongoose from 'mongoose';
 
-const MONGO_URI = process.env.MONGO_URI;
-
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-
+// Include the schema here
 const submissionSchema = new mongoose.Schema({
   from: String,
   to: String,
@@ -20,10 +14,9 @@ const submissionSchema = new mongoose.Schema({
   },
 });
 
-mongoose.models = {}
 const Submission = mongoose.model('Submission', submissionSchema);
 
-export default async function handler(req, res) {
+const handler = async (req, res) => {
   if (req.method === 'GET') {
     try {
       const submissions = await Submission.find({});
@@ -47,4 +40,6 @@ export default async function handler(req, res) {
       res.status(500).json({ error: 'Internal server error' });
     }
   }
-}
+};
+
+export default connectToMongo(handler);
