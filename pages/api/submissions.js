@@ -8,7 +8,7 @@ const cors = Cors({
   methods: ['GET', 'POST'], // Specify the HTTP methods you want to allow
 });
 
-// Include the schema here
+// Include the schema for the "Submission" collection
 const submissionSchema = new mongoose.Schema({
   from: String,
   to: String,
@@ -23,6 +23,18 @@ const submissionSchema = new mongoose.Schema({
 
 const Submission = mongoose.model('Submission', submissionSchema);
 
+// Include the schema for the "permanentdata" collection
+const permanentDataSchema = new mongoose.Schema({
+  from: String,
+  phoneNumber: String,
+  timestamp: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const PermanentData = mongoose.model('PermanentData', permanentDataSchema);
+
 const handler = async (req, res) => {
   if (req.method === 'GET') {
     try {
@@ -33,6 +45,8 @@ const handler = async (req, res) => {
     }
   } else if (req.method === 'POST') {
     const { from, to, charges, phoneNumber } = req.body;
+    
+    // Create a new Submission document
     const submission = new Submission({
       from,
       to,
@@ -40,8 +54,19 @@ const handler = async (req, res) => {
       phoneNumber,
     });
 
+    // Create a new PermanentData document
+    const permanentData = new PermanentData({
+      from,
+      phoneNumber,
+    });
+
     try {
+      // Save the Submission document
       await submission.save();
+
+      // Save the PermanentData document
+      await permanentData.save();
+
       res.status(200).json({ message: 'Submission successful' });
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });
