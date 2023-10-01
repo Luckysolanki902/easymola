@@ -37,7 +37,7 @@ const PeopleList = ({ apiUrl, refreshFlag }) => {
 
   return (
     <div className="people-list">
-      <h2>People Out of Hostel <span className='tagline2'>Earn While riding</span></h2>
+      <h2>People Out of Hostel <span className='tagline2'>Order While Sitting in hostel</span></h2>
       {people.length === 0 ? (
         <div className="no-people-message">
           <p>No one is live right now.</p>
