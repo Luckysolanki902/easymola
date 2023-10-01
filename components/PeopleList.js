@@ -37,7 +37,7 @@ const PeopleList = ({ apiUrl, refreshFlag }) => {
 
   return (
     <div className="people-list">
-      <h2>People Out of Hostel</h2>
+      <h2>People Out of Hostel <span className='tagline2'>Earn While riding</span></h2>
       {people.length === 0 ? (
         <div className="no-people-message">
           <p>No one is live right now.</p>
@@ -53,8 +53,12 @@ const PeopleList = ({ apiUrl, refreshFlag }) => {
               className="phone-number"
               onClick={() => handleCopyPhoneNumber(person.phoneNumber)}
             >
-              Phone: <span className='personPhone'> {person.phoneNumber}</span>
-              {tooltipText && <div className="tooltip">{tooltipText}</div>}
+              <div className='phoneFlex'>
+                <div>
+                  Phone: <span className='personPhone'> {person.phoneNumber}</span>
+                  {tooltipText && <div className="tooltip">{tooltipText}</div>}
+                </div>
+              </div>
             </div>
           </div>
         ))

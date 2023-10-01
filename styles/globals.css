@@ -4,7 +4,7 @@ header {
   color: white;
   padding: 10px 0;
   text-align: center;
-  font-size: 16px; /* Increased font size for a more prominent title */
+  font-size: 12px; /* Increased font size for a more prominent title */
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added a subtle shadow */
 }
@@ -141,4 +141,18 @@ body, html{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.tagline{
+  font-family: monospace;
+  color: white;
+}
+
+
+
+.tagline2{
+  font-family: monospace;
+  color: #3498db;
+  margin-left: 1rem;
+  font-size: 0.9rem;
 }

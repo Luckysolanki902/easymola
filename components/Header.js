@@ -4,7 +4,8 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <h1>EasyMola</h1>
+      <h1>EasyMola ( HBTU Kanpur ) </h1>
+      <p className='tagline'>Order While Sitting in hostel</p>
     </header>
   );
 };
