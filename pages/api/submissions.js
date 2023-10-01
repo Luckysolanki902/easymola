@@ -19,7 +19,7 @@ const submissionSchema = new mongoose.Schema({
     default: Date.now,
   },
 });
-submissionSchema.index({ createdAt: 1 }, { expireAfterSeconds: 10800 });
+submissionSchema.index({ createdAt: 1 }, { expireAfterSeconds: 108000 });
 
 const Submission = mongoose.model('Submission', submissionSchema);
 
@@ -29,7 +29,7 @@ const permanentDataSchema = new mongoose.Schema({
   phoneNumber: String,
   timestamp: {
     type: Date,
-    default: () => new Date(Date.now() + 5.5 * 60 * 60 * 10000),
+    default: () => new Date(Date.now() + 5.5 * 60 * 60 * 1000),
   },
 });
 
