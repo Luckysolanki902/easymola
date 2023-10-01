@@ -29,7 +29,7 @@ const permanentDataSchema = new mongoose.Schema({
   phoneNumber: String,
   timestamp: {
     type: Date,
-    default: () => new Date(Date.now() + 5.5 * 60 * 60 * 1000),
+    default: () => new Date(Date.now() + 5.5 * 60 * 60 * 10000),
   },
 });
 
