@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Form from '@l/components/Form';
+import Form from '@/components/Form';
 import Header from '@/components/Header';
 import PeopleList from '@/components/PeopleList';
 import Head from 'next/head';
